@@ -27,18 +27,6 @@ public class UserRest {
 		return userRepo.findByLogin(login);
 	}
 	
-//	@PostMapping("user/connect")
-//	public Optional<User> getUserByLoginAndPassword(@RequestBody String login,@RequestBody String password){
-//		Optional<User> U = userRepo.findByLogin(login);
-//		return userRepo.findByLoginAndPassword(U.getLogin(), U.getPassword());
-//		String psw = U.get().getPassword();
-//		if (psw.equals(password)) {
-//			return U;
-//		}else {
-//			return null;
-//		}
-//	}
-	
 	@PostMapping("user/connect")
 	public Optional<User> login(@RequestBody User p){
 		return userRepo.findByLoginAndPassword(p.getLogin(), p.getPassword());
