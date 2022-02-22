@@ -9,7 +9,8 @@ import fr.solutec.entities.User;
 
 
 public interface ClassMemoRepository  extends CrudRepository<ClassMemo, Long>{
-	public Optional<User> findByUser(User user);
+	public Optional<User> findByExpeditaire(User user);
+	public Optional<User> findByDestinataire(User user);
 
 
 }

@@ -15,7 +15,8 @@ public class ClassMemo {
 	@Id @GeneratedValue
 	private Long id;
 	private String text;
-	
 	@ManyToOne
-	private User user;
+	private User expeditaire;
+	@ManyToOne
+	private User destinataire;
 }
