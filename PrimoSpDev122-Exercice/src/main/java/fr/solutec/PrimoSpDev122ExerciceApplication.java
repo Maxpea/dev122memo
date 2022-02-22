@@ -38,9 +38,9 @@ public class PrimoSpDev122ExerciceApplication implements CommandLineRunner {
 		User u3 = new User(null, "ji", "jiji");
 		userRepo.save(u3);
 		
-		classMemoRepo.save(new ClassMemo(null, "jojo test memo",u1));
-		classMemoRepo.save(new ClassMemo(null, "jaja test memo",u2));
-		classMemoRepo.save(new ClassMemo(null, "jiji test memo",u3));
+		classMemoRepo.save(new ClassMemo(null, "jojo test memo",u1,u2));
+		classMemoRepo.save(new ClassMemo(null, "jaja test memo",u2,u3));
+		classMemoRepo.save(new ClassMemo(null, "jiji test memo",u3,null));
 	}
 
 }
