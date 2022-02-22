@@ -28,17 +28,19 @@ public class PrimoSpDev122ExerciceApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("**************************** Début lancement ****************************");
-		userRepo.save(new User(null, "jo", "jojo","jojo test memo"));
-		userRepo.save(new User(null, "ja", "jaja","jaja test memo"));
-		userRepo.save(new User(null, "ji", "jiji","jiji test memo"));
 		
-		Optional<User> jo = userRepo.findById((long) 1);
-		Optional<User> ja = userRepo.findById((long) 2);
-		Optional<User> ji = userRepo.findById((long) 3);
+		User u1 = new User(null, "jo", "jojo");
+		userRepo.save(u1);
 		
-		classMemoRepo.save(new ClassMemo(null, "jojo test memo",jo.get()));
-		classMemoRepo.save(new ClassMemo(null, "jaja test memo",ja.get()));
-		classMemoRepo.save(new ClassMemo(null, "jiji test memo",ji.get()));
+		User u2 = new User(null, "ja", "jaja");
+		userRepo.save(u2);
+		
+		User u3 = new User(null, "ji", "jiji");
+		userRepo.save(u3);
+		
+		classMemoRepo.save(new ClassMemo(null, "jojo test memo",u1));
+		classMemoRepo.save(new ClassMemo(null, "jaja test memo",u2));
+		classMemoRepo.save(new ClassMemo(null, "jiji test memo",u3));
 	}
 
 }

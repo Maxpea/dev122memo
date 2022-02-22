@@ -13,10 +13,9 @@ import lombok.NoArgsConstructor;
 public class User {
 	@Id @GeneratedValue
 	private Long id;
-    @Column(unique=true)
+    @Column(unique=true, nullable = false)
 	private String login;
-    @Column(unique=true)
+    @Column(nullable=false)
 	private String password;
-    private String memo;
 	
 }

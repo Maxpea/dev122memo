@@ -36,24 +36,8 @@ public class UserRest {
 			return null;
 		}	
 	}
-	@GetMapping("memo/user/{id}")
-	public String getMemoUserById(@PathVariable Long id){
-		Optional<User> U = userRepo.findById(id);
-		String memo = U.get().getMemo();
-		return memo;
-	}	
 	@GetMapping("user")
 	public Iterable<User> getAllUser(){
 		return userRepo.findAll();
-	}
-	@GetMapping("user/memo")
-	public List<String> getAllMemo(){
-		Iterable<User> ItU = userRepo.findAll();
-		List<String> ListeMemo = new ArrayList<>();
-		for (User u : ItU) {
-			ListeMemo.add(u.getMemo());
-		}
-		return ListeMemo;
-		
 	}
 }
